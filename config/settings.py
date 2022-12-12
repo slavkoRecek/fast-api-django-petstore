@@ -26,8 +26,6 @@ SECRET_KEY = 'django-insecure-jr4rb&c3acmy3-4n2m03%gcxg1yvf)jnu5a@twrehks=o9r)l5
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-STATIC_ROOT = BASE_DIR / 'static'
-
 
 # Application definition
 
@@ -38,6 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'pets'
+
 ]
 
 MIDDLEWARE = [
@@ -116,7 +116,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+# Static files
+# Important STATIC_ROOT must begin with /. This way the admin panell uses static files that are served from the context root. Otherwise they are served from the rellative context of the admin subroute.
+STATIC_URL = "/static/"
+STATICFILES_DIRS = [BASE_DIR / "static", ]
+STATIC_ROOT = BASE_DIR / "static"
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
