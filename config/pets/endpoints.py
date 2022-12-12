@@ -1,9 +1,7 @@
-from typing import Any
-
 from fastapi import APIRouter
 
-from pets.payloads import PetOut
-from pets.service import pet_service
+from config.pets.payloads import PetOut
+from config.pets.service import pet_service
 
 router = APIRouter()
 

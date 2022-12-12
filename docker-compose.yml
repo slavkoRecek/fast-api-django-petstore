@@ -12,25 +12,23 @@ services:
       - '5444:5432'
     networks:
       - main_network
-#  app:
-#    build:
-#      context: .
-#    command: gunicorn foodie.wsgi:application --config=gunicorn.conf.py
-#    ports:
-#      - "8000:8000"
-#      - "22:22"
-##    in docker compose 3 the deploy limit is not working by default. Therefore one must run the up like:
-##    docker compose --compatibility up -d
-##    deploy:
-##      resources:
-##        limits:
-##          cpus: "0.512"
-##          memory: 1024M
-#    env_file: .env
-#    depends_on:
-#      - postgres
-#    networks:
-#      - main_network
+  app:
+    build:
+      context: .
+      dockerfile: ./CICD/docker/Dockerfile
+    ports:
+      - "8000:8000"
+#    in docker compose 3 the deploy limit is not working by default. Therefore one must run the up like:
+#    docker compose --compatibility up -d
+#    deploy:
+#      resources:
+#        limits:
+#          cpus: "0.512"
+#          memory: 1024M
+    depends_on:
+      - postgres
+    networks:
+      - main_network
 
 
 networks:

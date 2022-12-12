@@ -1,4 +1,4 @@
-from pets.endpoints import router as pet_router
+from config.pets.endpoints import router as pet_router
 from fastapi import APIRouter
 
 router = APIRouter()

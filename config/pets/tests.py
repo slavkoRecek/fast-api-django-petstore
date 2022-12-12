@@ -2,7 +2,7 @@ from django.test import TransactionTestCase
 from fastapi.testclient import TestClient
 
 from config.asgi import app
-from pets.models import Pet
+from config.pets.models import Pet
 
 
 # Create your tests here.
