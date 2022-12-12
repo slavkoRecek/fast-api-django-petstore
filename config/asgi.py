@@ -43,7 +43,7 @@ def get_application() -> FastAPI:
     # Include all api endpoints
     app.include_router(fast_api_router, prefix="/fast-api")
 
-    app.mount(f"/web", WSGIMiddleware(django_wsgi_app))
+    app.mount(f"/django", WSGIMiddleware(django_wsgi_app))
     # Set Up the static files and directory to serve django static files
     app.mount("/static", StaticFiles(directory=settings.STATIC_ROOT), name="static")
 
