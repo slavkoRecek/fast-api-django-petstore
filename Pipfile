@@ -8,6 +8,7 @@ django = ">=4.1.4"
 fastapi = ">=0.88"
 uvicorn = {extras = ["standard"], version = ">=0.20"}
 pydantic = "*"
+httpx = "*"
 
 [dev-packages]
 

@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "69a6181a9815ced861d438cd6cd2a6b84ea00691a0690595185b25dd134fb9f4"
+            "sha256": "deffe69b0123d0b15910ea0f9e1d5f7edb76e399af833b9770152667b4e0a81d"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -31,6 +31,14 @@
             ],
             "markers": "python_version >= '3.7'",
             "version": "==3.5.2"
+        },
+        "certifi": {
+            "hashes": [
+                "sha256:35824b4c3a97115964b408844d64aa14db1cc518f6562e8d7261699d1350a9e3",
+                "sha256:4ad3232f5e926d6718ec31cfc1fcadfde020920e278684144551c91769c7bc18"
+            ],
+            "markers": "python_version >= '3.6'",
+            "version": "==2022.12.7"
         },
         "click": {
             "hashes": [
@@ -63,6 +71,14 @@
             ],
             "markers": "python_version >= '3.7'",
             "version": "==0.14.0"
+        },
+        "httpcore": {
+            "hashes": [
+                "sha256:52c79095197178856724541e845f2db86d5f1527640d9254b5b8f6f6cebfdee6",
+                "sha256:c35c5176dc82db732acfd90b581a3062c999a72305df30c0fc8fafd8e4aca068"
+            ],
+            "markers": "python_version >= '3.7'",
+            "version": "==0.16.2"
         },
         "httptools": {
             "hashes": [
@@ -109,6 +125,14 @@
                 "sha256:fe9c766a0c35b7e3d6b6939393c8dfdd5da3ac5dec7f971ec9134f284c6c36d6"
             ],
             "version": "==0.5.0"
+        },
+        "httpx": {
+            "hashes": [
+                "sha256:0b9b1f0ee18b9978d637b0776bfd7f54e2ca278e063e3586d8f01cda89e042a8",
+                "sha256:202ae15319be24efe9a8bd4ed4360e68fde7b38bcc2ce87088d416f026667d19"
+            ],
+            "index": "fast_api-django_pet_store",
+            "version": "==0.23.1"
         },
         "idna": {
             "hashes": [
@@ -211,6 +235,16 @@
                 "sha256:f84fbc98b019fef2ee9a1cb3ce93e3187a6df0b2538a651bfb890254ba9f90b5"
             ],
             "version": "==6.0"
+        },
+        "rfc3986": {
+            "extras": [
+                "idna2008"
+            ],
+            "hashes": [
+                "sha256:270aaf10d87d0d4e095063c65bf3ddbc6ee3d0b226328ce21e036f946e421835",
+                "sha256:a86d6e1f5b1dc238b218b012df0aa79409667bb209e58da56d0b94704e712a97"
+            ],
+            "version": "==1.5.0"
         },
         "sniffio": {
             "hashes": [

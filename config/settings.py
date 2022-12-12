@@ -119,7 +119,6 @@ USE_TZ = True
 # Static files
 # Important STATIC_ROOT must begin with /. This way the admin panell uses static files that are served from the context root. Otherwise they are served from the rellative context of the admin subroute.
 STATIC_URL = "/static/"
-STATICFILES_DIRS = [BASE_DIR / "static", ]
 STATIC_ROOT = BASE_DIR / "static"
 
 
