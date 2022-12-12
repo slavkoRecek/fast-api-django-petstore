@@ -9,6 +9,8 @@ fastapi = ">=0.88"
 uvicorn = {extras = ["standard"], version = ">=0.20"}
 pydantic = "*"
 httpx = "*"
+django-environ = "*"
+psycopg2 = "*"
 
 [dev-packages]
 

@@ -10,6 +10,9 @@ from pets.models import Pet
 class FastApiTestCase(TransactionTestCase):
     fast_api_client = TestClient(app)
 
+    def tearDown(self):
+        self.fast_api_client.close()
+
 
 class ListPetsTestCase(FastApiTestCase):
 
@@ -20,5 +23,9 @@ class ListPetsTestCase(FastApiTestCase):
     def test_list_pets(self):
         response = self.fast_api_client.get("/fast-api/pets")
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.json(), [{'id': 1, 'name': 'dogy', 'status': 'available'}])
+        self.assertEqual(len(response.json()), 1)
+        pet: dict = response.json()[0]
+        self.assertTrue('id' in pet)
+        self.assertEqual(pet['name'], 'dogy')
+        self.assertEqual(pet['status'], 'available')
         print(response.json())
