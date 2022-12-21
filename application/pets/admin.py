@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from config.pets.models import Pet
+from application.pets.models import Pet
 
 
 # Register your models here.

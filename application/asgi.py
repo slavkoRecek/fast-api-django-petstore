@@ -1,5 +1,4 @@
 import os
-from importlib.util import find_spec
 
 from django.apps import apps
 from django.conf import settings
@@ -10,15 +9,17 @@ from fastapi.middleware.wsgi import WSGIMiddleware
 from fastapi.staticfiles import StaticFiles
 
 # Export Django settings env variable
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "application.settings")
 apps.populate(settings.INSTALLED_APPS)
 
 # This endpoint imports should be placed below the settings env declaration
 # Otherwise, django will throw a configure() settings error
-from config.fast_api_router import router as fast_api_router
+from application.fast_api_router import router as fast_api_router
+
 #
 # Get the Django WSGI application we are working with
 django_wsgi_app = get_wsgi_application()
+
 
 # This can be done without the function, but making it functional
 # tidies the entire code and encourages modularity

@@ -1,5 +1,5 @@
-from config.pets.models import Pet
-from config.pets.payloads import PetOut
+from application.pets.models import Pet
+from application.pets.payloads import PetOut
 
 
 class PetService:

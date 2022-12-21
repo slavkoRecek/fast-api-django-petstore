@@ -28,7 +28,7 @@ RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 #
 COPY ./CICD/stages /code/CICD/stages
 COPY ./static /code/static
-COPY ./config /code/config
+COPY ./application /code/application
 
 #
-CMD ["uvicorn", "config.asgi:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "application.asgi:app", "--host", "0.0.0.0", "--port", "8000"]

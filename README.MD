@@ -14,7 +14,7 @@ pipenv install
 
 To run the server, run 
 ```shell
-uvicorn config.asgi:app --reload
+uvicorn application.asgi:app --reload
 ```
 
 ### Pycharm
@@ -22,7 +22,11 @@ To run have the project properly setup in pycharm. One needs to provide the path
 You can find the path to the python interpreter by running `pipenv --venv` in the project directory.
 
 ### Docker
-To run it with docker/compose, run `docker-compose up -d --build` in the project directory.
+To run it with docker/compose, run 
+```shell
+docker-compose up -d --build
+```` 
+in the project directory.
 The compose includes a local postgres database. To connect to the database.
 
 ### Running tests:
