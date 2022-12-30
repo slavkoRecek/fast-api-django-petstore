@@ -1,5 +1,7 @@
 from pydantic import BaseModel
 
+from application.pets.models import Status
+
 
 class PetOut(BaseModel):
     id: int
@@ -13,3 +15,8 @@ class PetOut(BaseModel):
             name=db_pet.name,
             status=db_pet.status,
         )
+
+
+class PetIn(BaseModel):
+    name: str
+    status: Status

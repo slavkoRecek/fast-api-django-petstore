@@ -24,8 +24,12 @@ You can find the path to the python interpreter by running `pipenv --venv` in th
 ### Docker
 To run it with docker/compose, run 
 ```shell
-docker-compose up -d --build
-```` 
+#create external volumes
+docker volume create postgres-data-petstore-v
+docker volume create pgadmin-data-v
+
+docker compose --compatibility up -d --build
+``` 
 in the project directory.
 The compose includes a local postgres database. To connect to the database.
 
