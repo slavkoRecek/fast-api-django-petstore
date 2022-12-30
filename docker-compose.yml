@@ -20,7 +20,7 @@ services:
       dockerfile: ./CICD/docker/Dockerfile
     image: pet_store
     ports:
-      - "8000:8000"
+      - "8001:8000"
     #    in docker compose 3 the deploy limit is not working by default. Therefore one must run the up like:
     #    docker compose --compatibility up -d
     deploy:

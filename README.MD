@@ -14,7 +14,7 @@ pipenv install
 
 To run the server, run 
 ```shell
-uvicorn application.asgi:app --reload
+uvicorn application.asgi:app --host 0.0.0.0 --port 8000 --reload
 ```
 
 ### Pycharm
@@ -37,7 +37,7 @@ The compose includes a local postgres database. To connect to the database.
 ```shell
 python manage.py test --keepdb
 ```
-We use a custom test runner to run the tests. `FastApiTestCase`
+We use a custom test case to run the tests. `FastApiTestCase`
 
 ## Important urls:
 - http://localhost:8000/fast-api/docs
