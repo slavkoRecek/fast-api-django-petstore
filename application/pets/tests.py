@@ -24,7 +24,6 @@ class ListPetsTestCase(FastApiTestCase):
         self.assertTrue('id' in pet)
         self.assertEqual(pet['name'], 'dogy')
         self.assertEqual(pet['status'], 'available')
-        print(response.json())
 
 
 class CreatePetsTestCase(FastApiTestCase):

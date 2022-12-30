@@ -1,9 +1,13 @@
+import logging
+
 from django.conf import settings
 from django.db import connections
 from django.test import TransactionTestCase
 from starlette.testclient import TestClient
 
 from application.asgi import app
+
+logger = logging.getLogger(__name__)
 
 
 class FastApiTestCase(TransactionTestCase):
@@ -15,7 +19,6 @@ class FastApiTestCase(TransactionTestCase):
 
     @classmethod
     def tearDownClass(cls) -> None:
-        print('tearDownClass is called')
         cls.close_db_connections()
         super().tearDownClass()
 
@@ -30,4 +33,4 @@ class FastApiTestCase(TransactionTestCase):
                     pg_stat_activity.datname =
                       '{settings.DATABASES["default"]["NAME"]}';"""
                 )
-                print(f"Killed {len(cursor.fetchall())} stale connections.")
+                logger.info(f"Killed {len(cursor.fetchall())} db connections.")
