@@ -60,3 +60,6 @@ def register_exception_handlers(app: FastAPI) -> None:
             status_code=422,
             content=body.dict(),
         )
+
+
+error_response_dict = {422: {"model": ErrorResponse}}
