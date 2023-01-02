@@ -47,5 +47,11 @@ class CreatePetsTestCase(FastApiTestCase):
             })
         self.assertEqual(response.status_code, 422)
         response: dict = response.json()
-        self.assertEqual(response['detail'][0]['msg'],
-                         "value is not a valid enumeration member; permitted: \'available\', \'pending\', \'sold\'")
+        self.assertEqual(response['status_code'], 422)
+        self.assertEqual(len(response['errors']), 1)
+        self.assertEqual(response['errors'][0]['message'], "Field 'status' is invalid. value is not a valid enumeration member; permitted: 'available', 'pending', 'sold'")
+        self.assertEqual(response['errors'][0]['code'], 'validation_error')
+        self.assertEqual(response['errors'][0]['detail'], {
+            'model_class': 'PetIn',
+            'field': 'status',
+        })

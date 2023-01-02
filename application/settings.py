@@ -53,7 +53,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'application.pets'
+    'application.pets',
+    'application.users'
 
 ]
 
@@ -68,6 +69,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'application.urls'
+AUTH_USER_MODEL = 'users.User'
 
 TEMPLATES = [
     {

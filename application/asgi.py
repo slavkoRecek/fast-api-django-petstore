@@ -8,6 +8,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.wsgi import WSGIMiddleware
 from fastapi.staticfiles import StaticFiles
 
+from application.shared.error_handling import register_exception_handlers
+
 # Export Django settings env variable
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "application.settings")
 apps.populate(settings.INSTALLED_APPS)
@@ -47,6 +49,8 @@ def get_application() -> FastAPI:
     app.mount(f"/django", WSGIMiddleware(django_wsgi_app))
     # Set Up the static files and directory to serve django static files
     app.mount("/static", StaticFiles(directory=settings.STATIC_ROOT), name="static")
+
+    register_exception_handlers(app)
 
     return app
 
