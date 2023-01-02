@@ -1,7 +1,7 @@
 from httpx import Response
 
 from application.users.models import User
-from lib.testing import FastApiTestCase
+from extra_libs.testing import FastApiTestCase
 
 
 # Create your tests here.

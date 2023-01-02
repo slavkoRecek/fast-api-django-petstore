@@ -3,7 +3,7 @@ import logging
 from httpx import Response
 
 from application.pets.models import Pet
-from lib.testing import FastApiTestCase
+from extra_libs.testing import FastApiTestCase
 
 # Create your tests here.
 logger = logging.getLogger(__name__)
