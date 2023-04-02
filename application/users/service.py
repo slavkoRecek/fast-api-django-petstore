@@ -36,3 +36,20 @@ class UserService:
 
 
 user_service: UserService = UserService()
+
+
+class AuthenticationService:
+    @staticmethod
+    def authenticate_user(email, password):
+        try:
+            user = User.objects.get(email=email)
+        except User.DoesNotExist:
+            return None
+        if not user.check_password(password):
+            return None
+        if not user.is_active:
+            return None
+        return user
+
+
+authentication_service: AuthenticationService = AuthenticationService()
