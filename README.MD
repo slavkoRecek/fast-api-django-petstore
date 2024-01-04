@@ -1,16 +1,17 @@
 # This project demonstrates the 'marriage' of Django and FastAPI
 
-We do use FastAPI only with sync views. The motivation for this is to use FastAPI only for the REST layer and Django for the rest of the application. 
+We do use FastAPI mostly with sync views. The motivation for this is to use FastAPI only for the REST layer and Django for the rest of the application. 
 ## Setup
-It uses pipenv to manage dependencies. To install pipenv, run: 
+Create a virtual environment and activate it. 
 ```shell
-pip install pipenv
+virtualenv venv
+source venv/bin/activate
+```
+Install the dependencies
+```shell
+pip install -r requirements.txt
 ```
 
-To install dependencies, run 
-```shell
-pipenv install
-```
 
 To run the server, run 
 ```shell
@@ -19,16 +20,11 @@ uvicorn application.asgi:app --host 0.0.0.0 --port 8000 --reload
 
 ### Pycharm
 To run have the project properly setup in pycharm. One needs to provide the path to the python interpreter.
-You can find the path to the python interpreter by running `pipenv --venv` in the project directory.
 
 ### Docker
 To run it with docker/compose, run 
 ```shell
-#create external volumes
-docker volume create postgres-data-petstore-v
-docker volume create pgadmin-data-v
-
-docker compose --compatibility up -d --build
+docker compose up -d --build
 ``` 
 in the project directory.
 The compose includes a local postgres database. To connect to the database.
@@ -45,8 +41,6 @@ We use a custom test case to run the tests. `FastApiTestCase`
 - http://localhost:8000/fast-api/pets
 
 ## Cheat sheets
-Here is a cheatsheet for pipenv: https://gist.github.com/bradtraversy/c70a93d6536ed63786c434707b898d55
-
 Django cheatsheet: https://dev.to/ericchapman/my-beloved-django-cheat-sheet-2056
 
 FastApi cheatsheet: https://lyz-code.github.io/blue-book/fastapi/

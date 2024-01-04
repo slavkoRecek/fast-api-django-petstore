@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_19" project-jdk-name="Pipenv (fast_api-django_pet_store)" project-jdk-type="Python SDK">
+  <component name="Black">
+    <option name="sdkName" value="Python 3.10 (fast-api-django-petstore)" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="Python 3.10 (fast-api-django-petstore)" project-jdk-type="Python SDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

@@ -9,7 +9,7 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     ports:
-      - '5444:5432'
+      - '5445:5432'
     volumes:
       - postgres-data-petstore-v:/var/lib/postgresql/data
     networks:
@@ -20,38 +20,20 @@ services:
       dockerfile: ./CICD/docker/Dockerfile
     image: pet_store
     ports:
-      - "8001:8000"
+      - "8000:8000"
     #    in docker compose 3 the deploy limit is not working by default. Therefore one must run the up like:
     #    docker compose --compatibility up -d
-    deploy:
-      resources:
-        limits:
-          cpus: "1"
-          memory: 2G
     environment:
       - STAGE_NAME=docker-local
+      - SERVICE=api
     depends_on:
       - postgres
     networks:
       - main_network
-  pgadmin:
-    image: dpage/pgadmin4
-    container_name: pgadmin4_container
-    restart: always
-    ports:
-      - "5050:80"
-    environment:
-      PGADMIN_DEFAULT_EMAIL: admin@email.com
-      PGADMIN_DEFAULT_PASSWORD: admin
-    volumes:
-      - pgadmin-data-v:/var/lib/pgadmin
 
 
 networks:
   main_network:
 volumes:
-  pgadmin-data-v:
-    external: true
   postgres-data-petstore-v:
-    external: true
 
